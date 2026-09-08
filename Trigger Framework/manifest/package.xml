@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+	<types>
+		<members>QueryBuilder</members>
+		<members>QueryBuilderTest</members>
+		<members>TriggerFactoryHandler</members>
+		<members>TriggerFactoryHandlerTest</members>
+		<members>TriggerHandlerExecution</members>
+		<name>ApexClass</name>
+	</types>
+	<types>
+		<members>Trigger_Factory__mdt</members>
+		<name>CustomObject</name>
+	</types>
+	<types>
+		<members>Trigger_Factory__mdt-Trigger Factory Layout</members>
+		<name>Layout</name>
+	</types>
+	<types>
+		<members>System_Admin</members>
+		<name>PermissionSet</name>
+	</types>
+	<version>67.0</version>
+</Package>
