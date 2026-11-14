@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <!-- Dynamic Related List implementation - deployable manifest -->
+
+    <!--
+        Apex: related list controller + generic community quick-action framework.
+        No concrete ICommunityAction implementations are included - the dispatcher
+        resolves handlers by class name via Type.forName(), so it deploys standalone.
+    -->
+    <types>
+        <members>CommunityActionDispatcher</members>
+        <members>CommunityActionDispatcherTest</members>
+        <members>CommunityActionResult</members>
+        <members>DynamicRelatedListController</members>
+        <members>DynamicRelatedListControllerTest</members>
+        <members>ICommunityAction</members>
+        <name>ApexClass</name>
+    </types>
+
+    <!-- Configuration-driven registry of quick-action handlers -->
+    <types>
+        <members>Community_Action_Handler__mdt</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>Community_Action_Handler__mdt.Action_Name__c</members>
+        <members>Community_Action_Handler__mdt.Handler_Class__c</members>
+        <members>Community_Action_Handler__mdt.Is_Active__c</members>
+        <name>CustomField</name>
+    </types>
+
+    <!-- Lightning Web Components (publishers + subscriber) -->
+    <types>
+        <members>communityActionHandler</members>
+        <members>dynamicRelatedList</members>
+        <members>recordActionModal</members>
+        <members>relatedListFullView</members>
+        <name>LightningComponentBundle</name>
+    </types>
+
+    <!-- Lightning Message Channel used for row-level quick actions -->
+    <types>
+        <members>DynamicQuickAction</members>
+        <name>LightningMessageChannel</name>
+    </types>
+
+    <!-- App page hosting the full view component -->
+    <types>
+        <members>Related_List_Full_View</members>
+        <name>FlexiPage</name>
+    </types>
+
+    <!-- Tab pointing to the full view app page -->
+    <types>
+        <members>Related_List_Full_View</members>
+        <name>CustomTab</name>
+    </types>
+
+    <!-- Assignable access to everything above - no profile changes required -->
+    <types>
+        <members>Dynamic_Related_List_User</members>
+        <name>PermissionSet</name>
+    </types>
+
+    <version>67.0</version>
+</Package>

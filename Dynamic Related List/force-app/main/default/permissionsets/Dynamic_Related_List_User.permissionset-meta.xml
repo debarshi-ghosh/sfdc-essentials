@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Dynamic Related List User</label>
+    <description>Grants everything needed to use the Dynamic Related List components (Apex controllers, the full view tab, and the quick-action handler registry) without touching any profile. Assign this permission set to any user who needs the component.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+
+    <!-- Apex classes exposed to Lightning via @AuraEnabled -->
+    <classAccesses>
+        <apexClass>CommunityActionDispatcher</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>CommunityActionResult</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>DynamicRelatedListController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+
+    <!-- Read access to the quick-action handler registry -->
+    <customMetadataTypeAccesses>
+        <enabled>true</enabled>
+        <name>Community_Action_Handler__mdt</name>
+    </customMetadataTypeAccesses>
+
+    <!-- Tab hosting the "View All" full view page -->
+    <tabSettings>
+        <tab>Related_List_Full_View</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+</PermissionSet>
