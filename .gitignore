@@ -37,3 +37,6 @@ sfca_results.json
 
 # Local environment variables
 .env
+
+# VS Code workspace files
+*.code-workspace
