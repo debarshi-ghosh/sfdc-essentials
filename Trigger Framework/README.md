@@ -177,12 +177,53 @@ Both caches are transaction-scoped statics, so volume does not multiply the cost
 
 ## Deploy and test
 
+### 1. Clone and open the project
+
 ```bash
-sf project deploy start -d force-app -o <org-alias>
-sf apex run test -o <org-alias> -l RunLocalTests -c -r human
+git clone https://github.com/debarshi-ghosh/sfdc-essentials.git
+cd "sfdc-essentials/Trigger Framework"
 ```
 
-Assign the `System Admin` permission set for access to the Apex classes and the custom metadata type.
+Open the **`Trigger Framework` folder itself** in VS Code (not the repository root) — the Salesforce extensions look for `sfdx-project.json` in the folder you open.
+
+### 2. Install dev dependencies (optional)
+
+Only needed for linting, Prettier and LWC Jest. Deployment works without it.
+
+```bash
+npm install
+```
+
+### 3. Connect your org
+
+```bash
+# Developer Edition / production / Trailhead Playground
+sf org login web -a triggerframework
+
+# Sandbox
+sf org login web -a triggerframework -r https://test.salesforce.com
+```
+
+Or create a scratch org from the included definition:
+
+```bash
+sf org create scratch -f config/project-scratch-def.json -a triggerframework -d -y 30
+```
+
+### 4. Deploy and run the tests
+
+```bash
+sf project deploy start -d force-app -o triggerframework
+sf apex run test -o triggerframework -l RunLocalTests -c -r human
+```
+
+### 5. Assign the permission set
+
+```bash
+sf org assign permset -n System_Admin -o triggerframework
+```
+
+This grants access to the Apex classes and the `Trigger_Factory__mdt` custom metadata type.
 
 Test classes: `AutomationBypassTest`, `TriggerFactoryHandlerTest`, `QueryBuilderTest`.
 
