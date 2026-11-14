@@ -59,6 +59,7 @@ Projects live in folders on `main`. Branches are used for work in progress and m
 ```
 sfdc-essentials/
 ├── README.md              # this index
+├── LICENSE                # MIT
 ├── .gitignore             # repository-wide ignores
 └── Trigger Framework/     # self-contained SFDX project
     ├── sfdx-project.json
@@ -66,4 +67,10 @@ sfdc-essentials/
     ├── config/
     └── README.md
 ```
+
+---
+
+## Licence
+
+Released under the [MIT Licence](LICENSE) — free to use, modify and deploy, including commercially. Please keep the copyright notice.
 
