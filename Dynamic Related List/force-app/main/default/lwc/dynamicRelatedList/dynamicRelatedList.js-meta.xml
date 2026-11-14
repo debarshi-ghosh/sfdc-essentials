@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>64.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__RecordPage</target>
+        <target>lightning__AppPage</target>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__RecordPage,lightning__AppPage">
+            <property name="cardTitle" type="String" label="Card Title" description="Title displayed on the component card" default="Related Records"/>
+            <property name="iconName" type="String" label="Icon Name" description="SLDS icon name (e.g., standard:account)" default="standard:related_list"/>
+            <property name="childObjectApiName" type="String" label="Child Object API Name" description="API name of the related child object" required="true"/>
+            <property name="relationshipFieldApiName" type="String" label="Relationship Field API Name" description="Lookup/Master-Detail field on child object pointing to parent" required="true"/>
+            <property name="fieldApiNames" type="String" label="Field API Names (comma-separated)" description="Comma-separated list of field API names to display as columns" required="true"/>
+            <property name="sortField" type="String" label="Default Sort Field" description="API name of the field to sort by"/>
+            <property name="sortDirection" type="String" label="Sort Direction" description="ASC or DESC" default="ASC"/>
+            <property name="recordLimit" type="Integer" label="Max Records" description="Maximum number of records to display" default="10"/>
+            <property name="rowActions" type="String" label="Row Actions (JSON)" description="JSON array of row actions. Example: [{&quot;label&quot;:&quot;View Invoice&quot;,&quot;name&quot;:&quot;My_Object__c.View_Invoice&quot;,&quot;type&quot;:&quot;quick_action&quot;},{&quot;label&quot;:&quot;View Record&quot;,&quot;name&quot;:&quot;view_record&quot;}]"/>
+            <property name="showRowNumbers" type="Boolean" label="Show Row Numbers" default="false"/>
+            <property name="showNewButton" type="Boolean" label="Show New Button" description="Adds a New button to the card header that creates a child record with the parent lookup pre-filled." default="false"/>
+            <property name="hideRecordLink" type="Boolean" label="Hide Record Link (First Column)" description="When enabled, the first column link is hidden and users cannot navigate to the related record." default="false"/>
+        </targetConfig>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="recordId" type="String" default="{!recordId}" label="Record Id" description="Record Id from the page context (use {!recordId})"/>
+            <property name="cardTitle" type="String" label="Card Title" description="Title displayed on the component card" default="Related Records"/>
+            <property name="iconName" type="String" label="Icon Name" description="SLDS icon name (e.g., standard:account)" default="standard:related_list"/>
+            <property name="childObjectApiName" type="String" label="Child Object API Name" description="API name of the related child object" required="true"/>
+            <property name="relationshipFieldApiName" type="String" label="Relationship Field API Name" description="Lookup/Master-Detail field on child object pointing to parent" required="true"/>
+            <property name="fieldApiNames" type="String" label="Field API Names (comma-separated)" description="Comma-separated list of field API names to display as columns" required="true"/>
+            <property name="sortField" type="String" label="Default Sort Field" description="API name of the field to sort by"/>
+            <property name="sortDirection" type="String" label="Sort Direction" description="ASC or DESC" default="ASC"/>
+            <property name="recordLimit" type="Integer" label="Max Records" description="Maximum number of records to display" default="10"/>
+            <property name="rowActions" type="String" label="Row Actions (JSON)" description="JSON array of row actions. Example: [{&quot;label&quot;:&quot;View Invoice&quot;,&quot;name&quot;:&quot;My_Object__c.View_Invoice&quot;,&quot;type&quot;:&quot;quick_action&quot;},{&quot;label&quot;:&quot;View Record&quot;,&quot;name&quot;:&quot;view_record&quot;}]"/>
+            <property name="showRowNumbers" type="Boolean" label="Show Row Numbers" default="false"/>
+            <property name="showNewButton" type="Boolean" label="Show New Button" description="Adds a New button to the card header that creates a child record with the parent lookup pre-filled." default="false"/>
+            <property name="hideRecordLink" type="Boolean" label="Hide Record Link (First Column)" description="When enabled, the first column link is hidden and users cannot navigate to the related record." default="false"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

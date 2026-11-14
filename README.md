@@ -11,6 +11,7 @@ Each folder is a **self-contained SFDX project** with its own `sfdx-project.json
 | Project | Description |
 | --- | --- |
 | [Trigger Framework](Trigger%20Framework/README.md) | Metadata-driven Apex trigger framework with a centralised bypass mechanism shared by Apex triggers and record-triggered Flows. Handlers are registered as custom metadata, so adding, reordering or deactivating automation is a configuration change rather than a code change. |
+| [Dynamic Related List](Dynamic%20Related%20List/README.md) | Configuration-driven related list for Lightning Experience and Experience Cloud. Point it at any child object and lookup field from App Builder to get a formatted, sortable list with relationship traversal, multi-currency support, a paginated full view, and built-in New/Edit/Delete that work in CRM, Aura and LWR sites alike. |
 
 ---
 
@@ -61,9 +62,15 @@ sfdc-essentials/
 ├── README.md              # this index
 ├── LICENSE                # MIT
 ├── .gitignore             # repository-wide ignores
-└── Trigger Framework/     # self-contained SFDX project
+├── Trigger Framework/     # self-contained SFDX project
+│   ├── sfdx-project.json
+│   ├── force-app/
+│   ├── config/
+│   └── README.md
+└── Dynamic Related List/  # self-contained SFDX project
     ├── sfdx-project.json
     ├── force-app/
+    ├── manifest/
     ├── config/
     └── README.md
 ```
